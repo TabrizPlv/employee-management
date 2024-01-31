@@ -1,0 +1,55 @@
+.pagination-container {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  color: #063970;
+  font-size: 1.3rem;
+}
+
+.inner-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-entries {
+  font-size: inherit;
+}
+
+.button-container {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  height: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+  font-size: inherit;
+  color: inherit;
+}
+
+button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.button-enabled {
+  color: inherit;
+}
+
+.button-disabled {
+  color: gray;
+}
+
+.button-disabled:hover {
+  text-decoration: none;
+  cursor:initial;
+  background-color: inherit;
+}

@@ -1,0 +1,28 @@
+.card-container {
+  background-color: lightgray;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.info-container {
+  flex: 5;
+  color: #063970;
+}
+
+.info-container h1 {
+  font-size: 2rem;
+}
+
+.info-container h2 {
+  font-size: 1rem;
+}
+
+.button-container {
+  flex: 1;
+  display: flex;
+}
