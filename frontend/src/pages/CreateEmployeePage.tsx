@@ -72,7 +72,7 @@ const CreateEmployeePage: React.FC<FormProps> = (props) => {
     if (
       validateName(state.employeeName) ||
       validateSalary(state.salary) ||
-      state.department == DepartmentEnum.NONE
+      state.department === DepartmentEnum.NONE
     ) {
       alert("Input Error!");
     } else {

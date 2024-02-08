@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./store/store";
+import store, { persistor } from "./store/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CreateEmployeePage from "./pages/CreateEmployeePage";
@@ -10,6 +10,7 @@ import UpdateEmployeePage from "./pages/UpdateEmployeePage";
 import { DepartmentEnum } from "./types/Department/Department.type";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import { PersistGate } from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
@@ -40,8 +41,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );

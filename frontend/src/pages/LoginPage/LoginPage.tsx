@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
     password: "",
   });
 
-  const [login, { error }] = useLoginMutation();
+  const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -30,16 +30,14 @@ const LoginPage: React.FC = () => {
 
   async function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
-    if (!error) {
-      await login(state)
-        .unwrap()
-        .then((response) => {
-          const { user, token } = response;
-          dispatch(setUser({ user, token }));
-          navigate("/home");
-        })
-        .catch((error) => alert("Error trying to log in, Try again."));
-    }
+    await login(state)
+      .unwrap()
+      .then((response) => {
+        const { user, token } = response;
+        dispatch(setUser({ user, token }));
+        navigate("/home");
+      })
+      .catch((error) => alert("Error trying to log in, Try again."));
   }
 
   return (

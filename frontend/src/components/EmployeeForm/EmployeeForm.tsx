@@ -37,7 +37,7 @@ const EmployeeForm: React.FC<EmployeeFormProp> = (props) => {
     if (
       validateName(empInForm.employeeName) ||
       validateSalary(empInForm.salary) ||
-      state.department == DepartmentEnum.NONE
+      state.department === DepartmentEnum.NONE
     ) {
       alert("Input Error!");
     } else if (noChangesMade()) {
